@@ -1,0 +1,38 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+        <h1>Exceptions</h1>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      {{template "flash.html" .}}
+    </div>
+    <div class="col-md-12">
+      <ul class="exceptions">
+        {{range .exceptions}}
+          <li>
+            <div class="name">{{.Name}}</div>
+            <div class="message">{{.Message}}</div>
+            <ul class="instances">
+              {{range .Instances}}
+                <li>{{.}}</li>
+              {{end}}
+            </ul>
+          </li>
+        {{end}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
