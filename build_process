@@ -1,0 +1,3 @@
+# vagrant vm
+docker build -t hayesgm/lurch https://raw.github.com/hayesgm/go-lurch/master/Dockerfile
+docker push hayesgm/lurch
